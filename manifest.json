@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Domain Query Parameter Adder",
+  "version": "1.0",
+  "description": "Adds the domain name to API query parameters.",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png"
+      
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png"
+    
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
